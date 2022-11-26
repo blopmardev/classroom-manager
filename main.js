@@ -82,3 +82,11 @@ console.log("Esto es el índice", randomStudentIndex, getRandomStudent.name);
 students.splice(randomStudentIndex, 1); // 1 es la cantidad de elementos (estudiantes) a eliminar
 
 console.table(students);
+
+// Mostrar por consola todos los datos de las alumnas (gender: 'female')
+
+function onlyFemaleStudents(students){
+    const getFemaleStudents = students.filter(student => student.gender == "female");
+    console.table(getFemaleStudents);
+}
+onlyFemaleStudents(students)
