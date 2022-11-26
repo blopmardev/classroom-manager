@@ -140,12 +140,18 @@ getAllFemaleStudents(students)
 
 // Mostrar por consola los nombres de los estudiantes que tengan entre 20 y 25 años
 
-function getMid20s(students){
+function getMid20s(students) {
     let isMid20s = students.filter(student => student.age >= 20 && student.age <= 25);
     let studentsIn20s = isMid20s.map(function (student) {
-      return student.name; 
-  });
+        return student.name;
+    });
     console.table(isMid20s)
     console.log("Estudiantes entre 20-25 años:", studentsIn20s)
-  }
-  getMid20s(students)
+}
+getMid20s(students)
+
+// Calcular la media de edad de todos los estudiantes
+function getAverageAge(students) {
+    return students.reduce((prev, student) => prev + student.age, 0) / students.length;
+}
+console.log(`La media de edad de la clase es de ${getAverageAge(students).toFixed(2)} años.`);
