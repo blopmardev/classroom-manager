@@ -28,6 +28,9 @@ const students = [{
     name: 'Orko'
 }]
 
+let femaleStudents = students.filter(student => student.gender == "female");
+let maleStudents = students.filter(student => student.gender == "male");
+
 const maleIcon = '♂';
 const femaleIcon = '♀️';
 
@@ -45,6 +48,7 @@ function getNumberOfStudents(students) {
     return studentsNumber;
 }
 console.log("En total hay", getNumberOfStudents(students), "estudiantes");
+console.group();
 
 // Mostrar el nombre de todos los estudiantes
 
@@ -62,6 +66,7 @@ function getStudentName(student) {
 }
 
 students.forEach((name, gender) => getStudentName(name, gender));
+console.groupEnd()
 
 // Eliminar el último estudiante de la clase
 
@@ -85,18 +90,15 @@ console.table(students);
 // Mostrar por consola todos los datos de las alumnas (gender: 'female')
 
 function onlyFemaleStudents(students) {
-    const getFemaleStudents = students.filter(student => student.gender == "female");
-    console.table(getFemaleStudents);
+    console.table(femaleStudents);
 }
 onlyFemaleStudents(students)
 
 // Mostrar por consola el número de hombres y mujeres que hay en la clase.
 
 function allGenderStudents(students) {
-    const getFemaleStudents = students.filter(student => student.gender == "female");
-    const getMaleStudents = students.filter(student => student.gender == "male");
-    const numberOfFemaleStudents = getFemaleStudents.length;
-    const numberOfMaleStudents = getMaleStudents.length;
+    const numberOfFemaleStudents = femaleStudents.length;
+    const numberOfMaleStudents = maleStudents.length;
     const numberOfAllGenderStudents = numberOfMaleStudents + numberOfFemaleStudents;
 
     /*if (numberOfFemaleStudents > 1 || numberOfFemaleStudents == 0) {
@@ -125,14 +127,14 @@ allGenderStudents(students);
 // Mostrar true o false por consola si todos los estudiantes de la clase son mujeres.
 
 function getAllFemaleStudents(students) {
-    let allFemaleStudents = students.filter(student => student.gender == "female");
-    if (allFemaleStudents.length == students.length) {
-        allFemaleStudents = true
-        console.log(allFemaleStudents)
+    //let allFemaleStudents = students.filter(student => student.gender == "female");
+    if (femaleStudents.length == students.length) {
+        femaleStudents = true
+        console.log(femaleStudents)
         return true;
     } else {
-        allFemaleStudents = false
-        console.log(allFemaleStudents)
+        femaleStudents = false
+        console.log(femaleStudents)
         return false;
     }
 }
@@ -155,11 +157,12 @@ getMid20s(students)
 function getYoungestStudent(students) {
     const youngestAge = Math.min(...students.map(item => item.age));
     let youngestStudent = students.filter(student => student.age == youngestAge);
-    let youngestStudentName = youngestStudent.map(function(student){
-      return student.name});
+    let youngestStudentName = youngestStudent.map(function (student) {
+        return student.name
+    });
     console.log(`El más joven de la clase es ${youngestStudentName} y tiene ${youngestAge} años`);
-  }
-  getYoungestStudent(students)
+}
+getYoungestStudent(students)
 
 // Calcular la media de edad de todos los estudiantes
 function getAverageAge(students) {
