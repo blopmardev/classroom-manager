@@ -68,3 +68,17 @@ function getStudentName(student) {
 students.pop();
 
 console.table(students);
+
+//Eliminar un estudiante de la clase aleatoriamente
+
+const getRandomStudent = students[Math.floor(Math.random() * students.length)];
+console.table([getRandomStudent]);
+
+const discardRandomStudent = students.filter(student => student !== getRandomStudent);
+console.table(discardRandomStudent);
+
+const randomStudentIndex = students.indexOf(getRandomStudent); // obtenemos el índice
+console.log("Esto es el índice", randomStudentIndex, getRandomStudent.name);
+students.splice(randomStudentIndex, 1); // 1 es la cantidad de elementos (estudiantes) a eliminar
+
+console.table(students);
