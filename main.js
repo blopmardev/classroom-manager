@@ -35,5 +35,13 @@ const students = [{
   const availableFemaleNames = ['Cecilia', 'Ana', 'Luisa', 'Silvia', 'Isabel', 'Virginia'];
   const availableGenders = ['male', 'female'];
   
-  //Mostrar tabla con todos los estudiantes
+// Mostrar tabla con todos los estudiantes
   console.table(students);
+
+// Mostrar el número total de estudiantes
+
+function getNumberOfStudents(students){
+    const studentsNumber = students.length;
+    return studentsNumber;
+  }
+  console.log("En total hay", getNumberOfStudents(students), "estudiantes");
