@@ -62,3 +62,9 @@ function getStudentName(student) {
   }
   
   students.forEach((name, gender) => getStudentName(name, gender));
+
+// Eliminar el último estudiante de la clase
+
+students.pop();
+
+console.table(students);
