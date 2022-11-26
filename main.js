@@ -150,6 +150,17 @@ function getMid20s(students) {
 }
 getMid20s(students)
 
+// Mostrar por consola el nombre de la persona más joven de la clase
+
+function getYoungestStudent(students) {
+    const youngestAge = Math.min(...students.map(item => item.age));
+    let youngestStudent = students.filter(student => student.age == youngestAge);
+    let youngestStudentName = youngestStudent.map(function(student){
+      return student.name});
+    console.log(`El más joven de la clase es ${youngestStudentName} y tiene ${youngestAge} años`);
+  }
+  getYoungestStudent(students)
+
 // Calcular la media de edad de todos los estudiantes
 function getAverageAge(students) {
     return students.reduce((prev, student) => prev + student.age, 0) / students.length;
