@@ -45,3 +45,20 @@ function getNumberOfStudents(students){
     return studentsNumber;
   }
   console.log("En total hay", getNumberOfStudents(students), "estudiantes");
+
+// Mostrar el nombre de todos los estudiantes
+
+function getStudentName(student) {
+    switch(student.gender){
+      case "male":
+        console.log(`Nombre del alumno: ${student.name} (${maleIcon})`);
+      break;
+      case "female":
+        console.log(`Nombre de la alumna: ${student.name} (${femaleIcon})`);
+      break;
+      default:
+        console.log(`Nombre alumno/a/e: ${student.name}`);
+    }
+  }
+  
+  students.forEach((name, gender) => getStudentName(name, gender));
