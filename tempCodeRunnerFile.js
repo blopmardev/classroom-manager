@@ -1,1 +1,0 @@
-Mostrar por consola todos los datos de las alumnas

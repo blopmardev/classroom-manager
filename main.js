@@ -91,7 +91,7 @@ function onlyFemaleStudents(students){
 }
 onlyFemaleStudents(students)
 
-// Mostrar por consola el número de chicos y chicas que hay en la clase.
+// Mostrar por consola el número de hombres y mujeres que hay en la clase.
 
 function allGenderStudents(students){
     const getFemaleStudents = students.filter(student => student.gender == "female");
@@ -122,3 +122,5 @@ function allGenderStudents(students){
     }
   }
   allGenderStudents(students);
+
+  
