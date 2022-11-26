@@ -90,3 +90,35 @@ function onlyFemaleStudents(students){
     console.table(getFemaleStudents);
 }
 onlyFemaleStudents(students)
+
+// Mostrar por consola el número de chicos y chicas que hay en la clase.
+
+function allGenderStudents(students){
+    const getFemaleStudents = students.filter(student => student.gender == "female");
+    const getMaleStudents = students.filter(student => student.gender == "male");
+    const numberOfFemaleStudents = getFemaleStudents.length;
+    const numberOfMaleStudents = getMaleStudents.length;
+    const numberOfAllGenderStudents = numberOfMaleStudents + numberOfFemaleStudents;
+  
+    if(numberOfFemaleStudents > 1 || numberOfFemaleStudents == 0){
+      console.log(`En esta clase hay ${numberOfFemaleStudents} mujeres ${femaleIcon}.`)
+    } else {
+      console.log(`En esta clase hay ${numberOfFemaleStudents} mujer ${femaleIcon}.`)
+    }
+  
+    if(numberOfMaleStudents > 1 || numberOfMaleStudents == 0){
+      console.log(`En esta clase hay ${numberOfMaleStudents} hombres ${maleIcon}.`)
+    } else{
+      console.log(`En esta clase hay ${numberOfMaleStudents} hombre ${femaleIcon}.`)
+    }
+  
+    console.log(`En esta clase hay ${numberOfAllGenderStudents} estudiantes.`)
+    
+    if(numberOfAllGenderStudents > 1){
+      console.group()
+      console.log(`${numberOfMaleStudents} son hombres ${maleIcon} y ${numberOfFemaleStudents} mujeres ${femaleIcon}.`)
+    } else {
+      console.log(`En esta clase no hay estudiantes.`)
+    }
+  }
+  allGenderStudents(students);
