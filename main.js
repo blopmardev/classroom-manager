@@ -15,13 +15,13 @@ const students = [{
   icon: '♀️'
 },
 {
-  age: 16,
+  age: 18,
   examScores: [],
   gender: 'female',
   name: 'Silvia',
   icon: '♀️'
 }, {
-  age: 12,
+  age: 40,
   examScores: [],
   gender: 'male',
   name: 'Pablo',
@@ -218,13 +218,31 @@ getYoungestStudent(students)
 function getAverageAge(students) {
   return students.reduce((prev, student) => prev + student.age, 0) / students.length;
 }
-console.log(`La media de edad de la clase es: ${getAverageAge(students).toFixed(2)} años`);
+console.log(`La media de edad de la clase es:${getAverageAge(students).toFixed(2)} años`);
 
 // 13. Mostrar por consola la edad media de las chicas de la clase
 
 function getFemaleAverageAge(students) {
-  console.table(femaleStudents);
+  //console.table(femaleStudents);
   let femaleAgerageAge = getAverageAge(femaleStudents).toFixed(2)
   console.log(`La media de edad de las mujeres de la clase es ${femaleAgerageAge} años`)
 }
 getFemaleAverageAge(students)
+
+// 14. Añadir nueva nota a los estudiantes. Por cada estudiante:
+  //- calcular una nota random (de 0-10)
+  //- añadirla a su listado de notas
+
+function addRandomScore() {
+  const min = 0
+  const max = 10
+  students.forEach(function(student) {
+    let randomScore = Math.floor(Math.random() * (max - min) + min)
+      student.examScores.push([randomScore])
+      console.log("Nuevo estudiante añadido")
+      console.table([student])
+      console.log("Base de datos de estudiantes actualizada")
+      console.table(students)
+  })
+}
+addRandomScore(students)
