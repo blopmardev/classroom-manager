@@ -16,10 +16,10 @@ El objetivo es construir un programa exclusivamente en **JavaScript** que permit
 8. Mostrar true o false si todos los estudiantes son mujeres.
 9. Mostrar los nombres de los estudiantes que tengan entre 20 y 25 años.
 10. Añadir un nuevo estudiante, con los siguientes datos:
-  - nombre aleatorio.
-  - edad aleatoria entre 20 y 50 años.
-  - género aleatorio.
-  - listado de calificaciones vacío.
+    - nombre aleatorio.
+    - edad aleatoria entre 20 y 50 años.
+    - género aleatorio.
+    - listado de calificaciones vacío.
 11. Mostrar el nombre de la persona más joven de la clase.
 12. Mostrar la edad media de todos los estudiantes.
 13. Mostrar la edad media de las mujeres de la clase.

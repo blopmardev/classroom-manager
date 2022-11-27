@@ -59,7 +59,7 @@ const availableMaleNames = ['Pepe', 'Juan', 'Victor', 'Leo', 'Francisco', 'Carlo
 const availableFemaleNames = ['Cecilia', 'Ana', 'Luisa', 'Silvia', 'Isabel', 'Virginia'];
 const availableGenders = ['male', 'female'];
 
-const welcomeMsg = "\n*******Bienvenido/a a CLASSROOM MANAGER, tu gestor de estudiantes*******\nPor favor, escribe el número de la gestión que deseas realizar.\n"
+const welcomeMsg = "\n*******  Bienvenido/a a CLASSROOM MANAGER, tu gestor de estudiantes  *******\nPor favor, escribe el número de la gestión que deseas realizar.\n"
 
 const printOptions = {
 1: 'Mostrar en formato de tabla todos los estudiantes.',
