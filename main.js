@@ -62,21 +62,21 @@ const availableGenders = ['male', 'female'];
 const welcomeMsg = "\n*******  Bienvenido/a a CLASSROOM MANAGER, tu gestor de estudiantes  *******\nPor favor, escribe el número de la gestión que deseas realizar.\n"
 
 const printOptions = {
-1: 'Mostrar en formato de tabla todos los estudiantes.',
-2: 'Mostrar la el número de estudiantes que hay en clase.',
-3: 'Mostrar el nombre de todos los estudiantes.',
-4: 'Eliminar el último estudiante de la clase.',
-5: 'Eliminar un estudiante aleatoriamente.',
-6: 'Mostrar los datos de todas las mujeres de la clase.',
-7: 'Mostrar el número de hombres y mujeres que hay en la clase.',
-8: 'Mostrar true o false si todos los estudiantes son mujeres.',
-9: 'Mostrar los nombres de los estudiantes que tengan entre 20 y 25 años.',
-10: 'Añadir un nuevo estudiante',
-11: 'Mostrar el nombre de la persona más joven de la clase.',
-12: 'Mostrar la edad media de todos los estudiantes.',
-13: 'Mostrar la edad media de las mujeres de la clase.',
-14: 'Añadir una nueva nota aleatoriamente por cada estudiante de la clase',
-15: 'Ordenar alfabéticamente el array de estudiantes, según su nombre.',
+  1: 'Mostrar en formato de tabla todos los estudiantes.',
+  2: 'Mostrar la el número de estudiantes que hay en clase.',
+  3: 'Mostrar el nombre de todos los estudiantes.',
+  4: 'Eliminar el último estudiante de la clase.',
+  5: 'Eliminar un estudiante aleatoriamente.',
+  6: 'Mostrar los datos de todas las mujeres de la clase.',
+  7: 'Mostrar el número de hombres y mujeres que hay en la clase.',
+  8: 'Mostrar true o false si todos los estudiantes son mujeres.',
+  9: 'Mostrar los nombres de los estudiantes que tengan entre 20 y 25 años.',
+  10: 'Añadir un nuevo estudiante',
+  11: 'Mostrar el nombre de la persona más joven de la clase.',
+  12: 'Mostrar la edad media de todos los estudiantes.',
+  13: 'Mostrar la edad media de las mujeres de la clase.',
+  14: 'Añadir una nueva nota aleatoriamente por cada estudiante de la clase',
+  15: 'Ordenar alfabéticamente el array de estudiantes, según su nombre.',
 }
 
 // Dar bienvenida al usuario
@@ -104,12 +104,12 @@ function selectAction() {
     // Preguntar al usuario qué opción desea elegir 
     rl.question('\nIntroduce el número: ', (num) => {
       rl.pause();
-      if (isNaN(num) || num <=0 || num >15) {
+      if (isNaN(num) || num <= 0 || num > 15) {
         reject('Error. Necesito que introduzcas un número del 1 al 15') // si el usuario mete una letra, rechazar la promesa.
         selectAction()
       } else {
         let fromStringToNumber = parseInt(num)
-        console.log("Opción elegida:", fromStringToNumber,"\n");
+        console.log("Opción elegida:", fromStringToNumber, "\n");
         resolve(fromStringToNumber); // si el usuario mete un número, resolvemos la promesa con ese número.
       }
     })
@@ -118,59 +118,70 @@ function selectAction() {
 }
 // consumidor
 async function fecthSelectedAction() {
-  try {
-    const action = await selectAction()
-    switch (action) {
-      case 1:
-        printStudentsTable(students); // 1. Mostrar en formato de tabla todos los estudiantes.
-        break;
-      case 2:
-        getNumberOfStudents(students); // 2. Mostrar por consola la cantidad de estudiantes.
-        break;
-      case 3:
-        getStudentName(students); // 3. Mostrar por consola todos los nombres de los estudiantes.
-        break;
-      case 4:
-        removeLastStudent(students); // 4. Eliminar el último estudiante de la clase.
-        break;
-      case 5:
-        removeRandomStudent(students); // 5. Eliminar un estudiante aleatoriamente.
-        break;
-      case 6:
-        onlyFemaleStudents(students); // 6. Mostrar por consola todos los datos de las alumnas (gender: female).
-        break;
-      case 7:
-        allGenderStudents(students); // 7. Mostrar por consola el número de alumnas y alumnos.
-        break;
-      case 8:
-        getFemaleStudentsBool(students); // 8. Mostrar true o false por consola si todos los estudiantes son mujeres.
-        break;
-      case 9:
-        getMid20s(students); // 9. Mostrar por consola los nombres de los esdiantes entre 20 y 25 años.
-        break;
-      case 10:
-        addRandomStudent(students); // 10. Añadir un estudiante nuevo.
-        break;
-      case 11:
-        getYoungestStudent(students); // 11. Mostrar por consola el nombre de la persona más joven.
-        break;
-      case 12:
-        getAverageAge(students); // 12. Mostrar por consola la edad media de todos los estudiantes.
-        break;
-      case 13:
-        getFemaleAverageAge(students); // 13. Mostrar por consola la edad media de las mujeres de la clase.
-        break;
-      case 14:
-        addRandomScore(students); // 14. Añadir nueva nota a los alumnos. Por cada alumno de la clase, tendremos que calcular una nota de forma aleatoria(número entre 0 y 10) y añadirla a su listado de notas.
-        break;
-      case 15:
-        sortAlphabetically(students); // 15. Ordenar el array de alumnos alfabéticamente según su nombre.
-        break;
+  do {
+    try {
+      const action = await selectAction()
+      switch (action) {
+        case 1:
+          printStudentsTable(students); // 1. Mostrar en formato de tabla todos los estudiantes.
+          break;
+        case 2:
+          getNumberOfStudents(students); // 2. Mostrar por consola la cantidad de estudiantes.
+          break;
+        case 3:
+          getStudentName(students); // 3. Mostrar por consola todos los nombres de los estudiantes.
+          break;
+        case 4:
+          removeLastStudent(students); // 4. Eliminar el último estudiante de la clase.
+          break;
+        case 5:
+          removeRandomStudent(students); // 5. Eliminar un estudiante aleatoriamente.
+          break;
+        case 6:
+          onlyFemaleStudents(students); // 6. Mostrar por consola todos los datos de las alumnas (gender: female).
+          break;
+        case 7:
+          allGenderStudents(students); // 7. Mostrar por consola el número de alumnas y alumnos.
+          break;
+        case 8:
+          getFemaleStudentsBool(students); // 8. Mostrar true o false por consola si todos los estudiantes son mujeres.
+          break;
+        case 9:
+          getMid20s(students); // 9. Mostrar por consola los nombres de los esdiantes entre 20 y 25 años.
+          break;
+        case 10:
+          addRandomStudent(students); // 10. Añadir un estudiante nuevo.
+          break;
+        case 11:
+          getYoungestStudent(students); // 11. Mostrar por consola el nombre de la persona más joven.
+          break;
+        case 12:
+          getAverageAge(students); // 12. Mostrar por consola la edad media de todos los estudiantes.
+          break;
+        case 13:
+          getFemaleAverageAge(students); // 13. Mostrar por consola la edad media de las mujeres de la clase.
+          break;
+        case 14:
+          addRandomScore(students); // 14. Añadir nueva nota a los alumnos. Por cada alumno de la clase, tendremos que calcular una nota de forma aleatoria(número entre 0 y 10) y añadirla a su listado de notas.
+          break;
+        case 15:
+          sortAlphabetically(students); // 15. Ordenar el array de alumnos alfabéticamente según su nombre.
+          break;
+        case 16:
+          selectAction();
+          break;
+        case 17:
+          bestAverageScore(students);
+          break;
+        case 18:
+          selectAction();
+          break;
+      }
     }
-  }
-  catch (error) {
-    console.log('Has introducido un valor fuera de rango. Prueba otra vez')
-  }
+    catch (error) {
+      console.log('Has introducido un valor fuera de rango. Prueba otra vez')
+    }
+  } while (true)
 }
 fecthSelectedAction()
 
@@ -190,17 +201,17 @@ function getNumberOfStudents(students) {
 
 function getStudentName(students) {
   console.log("Estos son los nombres de los estudiantes de la clase:\n")
-  students.forEach(function(student) {
-    if(student.gender == 'female'){
+  students.forEach(function (student) {
+    if (student.gender == 'female') {
       console.group();
       console.log(`Nombre de la alumna: ${student.name} (${femaleIcon})`);
       console.groupEnd();
-    }else{
+    } else {
       console.group();
       console.log(`Nombre del alumno: ${student.name} (${maleIcon})`);
       console.groupEnd();
     }
-    });
+  });
 }
 
 // 4. Eliminar el último estudiante de la clase
@@ -224,10 +235,10 @@ function removeRandomStudent(students) {
 // 6. Mostrar por consola todos los datos de las alumnas (gender: 'female')
 
 function onlyFemaleStudents(students) {
-  if(femaleStudents.length >= 1){
+  if (femaleStudents.length >= 1) {
     console.log("Estas son las alumnas de la clase")
     console.table(femaleStudents);
-  }else{
+  } else {
     console.log("No hay ninguna alumna en esta clase")
   }
 }
