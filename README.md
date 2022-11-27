@@ -4,6 +4,9 @@ Este proyecto forma parte de las prácticas del _[Bootcamp Glovo-KeepCoding "Muj
 
 El objetivo es construir un programa exclusivamente en **JavaScript** que permita gestionar, por consola, las altas/bajas de los alumnos/as de una clase, sus notas, sus edades, conocer cuántos hombres/mujeres tiene una clase, la media de sus calificaciones...
 
+![Previsualización de la pantalla de bienvenida de ClassRoom Manager](https://github.com/blopmardev/classroom-manager/blob/main/img/classroom-manager-welcome.png)
+
+
 ## ¿Qué puedes hacer con este programa? 🗃️
 
 1. Mostrar en formato de tabla todos los estudiantes.
