@@ -54,10 +54,10 @@ const availableGenders = ['male', 'female'];
 
 // 1. Mostrar tabla con todos los estudiantes
 
-function printTable() {
+function printStudentsTable() {
   console.table(students);
 }
-printTable()
+printStudentsTable()
 
 // 2. Mostrar el número total de estudiantes
 
@@ -172,31 +172,31 @@ function getMid20s(students) {
 getMid20s(students)
 
 // 10. Añadir un estudiante nuevo con los siguientes datos:
-  //- nombre aleatorio.
-  //- edad aleatoria entre 20 y 50 años.
-  //- género aleatorio.
-  //- listado de calificaciones vacío.
+//- nombre aleatorio.
+//- edad aleatoria entre 20 y 50 años.
+//- género aleatorio.
+//- listado de calificaciones vacío.
 
-function addRandomStudent(){
+function addRandomStudent() {
   const getRandomGender = availableGenders[Math.floor(Math.random() * availableGenders.length)];
   let getRandomName = null;
   let getIcon = null;
   if (getRandomGender === 'female') {
-      getRandomName = availableFemaleNames[Math.floor(Math.random() * availableFemaleNames.length)];
-      getIcon = femaleIcon
+    getRandomName = availableFemaleNames[Math.floor(Math.random() * availableFemaleNames.length)];
+    getIcon = femaleIcon
   } else {
-      getRandomName = availableMaleNames[Math.floor(Math.random() * availableMaleNames.length)];
-      getIcon = maleIcon
+    getRandomName = availableMaleNames[Math.floor(Math.random() * availableMaleNames.length)];
+    getIcon = maleIcon
   }
   const min = 20
   const max = 50
   let getRandomAge = Math.floor(Math.random() * (max - min) + min);
   students.push({
-      age: getRandomAge,
-      examScores: [],
-      gender: getRandomGender,
-      name: getRandomName,
-      icon: getIcon
+    age: getRandomAge,
+    examScores: [],
+    gender: getRandomGender,
+    name: getRandomName,
+    icon: getIcon
   })
   console.table(students)
 }
@@ -230,19 +230,19 @@ function getFemaleAverageAge(students) {
 getFemaleAverageAge(students)
 
 // 14. Añadir nueva nota a los estudiantes. Por cada estudiante:
-  //- calcular una nota random (de 0-10)
-  //- añadirla a su listado de notas
+//- calcular una nota random (de 0-10)
+//- añadirla a su listado de notas
 
 function addRandomScore() {
   const min = 0
   const max = 10
-  students.forEach(function(student) {
+  students.forEach(function (student) {
     let randomScore = Math.floor(Math.random() * (max - min) + min)
-      student.examScores.push([randomScore])
-      console.log("Nuevo estudiante añadido")
-      console.table([student])
-      console.log("Base de datos de estudiantes actualizada")
-      console.table(students)
+    student.examScores.push([randomScore])
+    console.log("Nuevo estudiante añadido")
+    console.table([student])
+    console.log("Base de datos de estudiantes actualizada")
+    console.table(students)
   })
 }
 addRandomScore(students)
