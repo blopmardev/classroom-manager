@@ -246,3 +246,10 @@ function addRandomScore() {
   })
 }
 addRandomScore(students)
+
+// 15. Ordenar el array de alumnos alfabéticamente, según su nombre.
+
+function sortAlphabetically() {
+  console.table(students.sort((a, b) => a.name.localeCompare(b.name)))
+}
+sortAlphabetically()
