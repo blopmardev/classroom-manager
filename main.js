@@ -4,36 +4,42 @@ const students = [{
   age: 20,
   examScores: [],
   gender: 'male',
-  name: 'Edu'
+  name: 'Edu',
+  icon: '♂'
 },
 {
   age: 22,
   examScores: [],
   gender: 'female',
-  name: 'Paloma'
+  name: 'Paloma',
+  icon: '♀️'
 },
 {
   age: 16,
   examScores: [],
   gender: 'female',
-  name: 'Silvia'
+  name: 'Silvia',
+  icon: '♀️'
 }, {
   age: 12,
   examScores: [],
   gender: 'male',
-  name: 'Pablo'
+  name: 'Pablo',
+  icon: '♂'
 },
 {
   age: 33,
   examScores: [],
   gender: 'female',
-  name: 'Ariadna'
+  name: 'Ariadna',
+  icon: '♀️'
 },
 {
   age: 16,
   examScores: [],
   gender: 'male',
-  name: 'Orko'
+  name: 'Orko',
+  icon: '♂'
 }]
 
 let femaleStudents = students.filter(student => student.gender == "female");
@@ -144,18 +150,10 @@ allGenderStudents(students);
 
 // 8. Mostrar true o false por consola si todos los estudiantes de la clase son mujeres.
 
-function getAllFemaleStudents(students) {
-
-  let allFemaleStudents = femaleStudents;
-  if (allFemaleStudents.length == students.length) {
-    allFemaleStudents = true
-    console.log(allFemaleStudents)
-  } else {
-    allFemaleStudents = false
-    console.log(allFemaleStudents)
-  }
+function getAllFemaleStudentsBool(students) {
+  console.log(students.every(gender => gender === 'female'))
 }
-getAllFemaleStudents(students)
+getAllFemaleStudentsBool(students)
 
 // 9. Mostrar por consola los nombres de los estudiantes que tengan entre 20 y 25 años
 
@@ -172,6 +170,37 @@ function getMid20s(students) {
   console.table(isMid20s)
 }
 getMid20s(students)
+
+// 10. Añadir un estudiante nuevo con los siguientes datos:
+  //- nombre aleatorio.
+  //- edad aleatoria entre 20 y 50 años.
+  //- género aleatorio.
+  //- listado de calificaciones vacío.
+
+function addRandomStudent(){
+  const getRandomGender = availableGenders[Math.floor(Math.random() * availableGenders.length)];
+  let getRandomName = null;
+  let getIcon = null;
+  if (getRandomGender === 'female') {
+      getRandomName = availableFemaleNames[Math.floor(Math.random() * availableFemaleNames.length)];
+      getIcon = femaleIcon
+  } else {
+      getRandomName = availableMaleNames[Math.floor(Math.random() * availableMaleNames.length)];
+      getIcon = maleIcon
+  }
+  const min = 20
+  const max = 50
+  let getRandomAge = Math.floor(Math.random() * (max - min) + min);
+  students.push({
+      age: getRandomAge,
+      examScores: [],
+      gender: getRandomGender,
+      name: getRandomName,
+      icon: getIcon
+  })
+  console.table(students)
+}
+addRandomStudent(students)
 
 // 11. Mostrar por consola el nombre de la persona más joven de la clase
 
